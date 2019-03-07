@@ -4,6 +4,8 @@ pipeline {
     environment {
         mvnHome = tool name: 'localMaven', type: 'maven'
         //Define mvnHome as tool for maven
+
+        jobName = "Pipeline Project"
     }
 
     stages {
@@ -21,8 +23,11 @@ pipeline {
     }
 
     post {
-        success {
-            mail to: mariefraulein.sergi@hcl.com, subject: 'Jenkins Job Successful'
+        failure {
+            mail to: 'mariefraulein.sergi@hcl.com', 
+            subject: "Job Successful: $(jobName)",
+            color: 'RED',
+            body: "Job Successful. Congratulations!"
         }
     }
 }
