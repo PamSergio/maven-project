@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    def mvnHome = tool name: 'localMaven', type: 'maven'
-    
+
     stages {
+        def mvnHome = tool name: 'localMaven', type: 'maven'
         stage ('Compile Stage') {
-            steps   {
+            steps {
                 sh "${mvnHome}/bin/mvn package"
             } 
         }
