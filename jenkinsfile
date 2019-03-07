@@ -23,7 +23,8 @@ pipeline {
     }
 
     post {
-        failure {
+        Success {
+            echo "Job Successful"
             mail to: 'mariefraulein.sergi@hcl.com', 
             subject: "Job Successful: ${jobName}",
             body: "Job Successful. Congratulations!"
