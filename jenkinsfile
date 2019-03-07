@@ -19,11 +19,11 @@ pipeline {
             }
         }
 
-        post {
-            success {
-                mail to: mariefraulein.sergi@hcl.com 'Jenkins Job Successful'
-            }
+    post {
+        success {
+            mail to: mariefraulein.sergi@hcl.com 'Jenkins Job Successful'
         }
+    }
         
     }
 }
