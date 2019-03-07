@@ -18,12 +18,11 @@ pipeline {
                  archiveArtifacts '**/*.war'
             }
         }
+    }
 
     post {
         success {
             mail to: mariefraulein.sergi@hcl.com 'Jenkins Job Successful'
         }
-    }
-        
     }
 }
