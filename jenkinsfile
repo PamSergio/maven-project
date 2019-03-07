@@ -17,5 +17,22 @@ pipeline {
                 }
             }
         }
+
+        stage ('Package Stage') {
+            steps {
+                withMaven(maven : 'Maven_3_6_0') {
+                    sh 'mvn Package'
+                }
+            }
+        }
+
+        stage ('Artifact Stage'){
+            steps {
+                 archive '**/*.war'
+            }
+           
+        }
+
+        
     }
 }
