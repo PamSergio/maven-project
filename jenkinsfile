@@ -25,7 +25,7 @@ pipeline {
     post {
         failure {
             mail to: 'mariefraulein.sergi@hcl.com', 
-            subject: "Job Successful: $(jobName)",
+            subject: "Job Successful: ${jobName}",
             color: 'RED',
             body: "Job Successful. Congratulations!"
         }
