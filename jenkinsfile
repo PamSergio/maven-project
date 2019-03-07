@@ -22,7 +22,7 @@ pipeline {
 
     post {
         success {
-            mail to: mariefraulein.sergi@hcl.com 'Jenkins Job Successful'
+            mail to: mariefraulein.sergi@hcl.com, subject: 'Jenkins Job Successful'
         }
     }
 }
